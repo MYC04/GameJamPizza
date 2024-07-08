@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Patrol : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] PatrolPoints;
+    private GameObject PatrolPointsListParent;
+ 
+    private List<Transform> PatrolPoints;
     [SerializeField]
     private int targetPoint;
     [SerializeField]
@@ -16,14 +19,26 @@ public class Patrol : MonoBehaviour
     [SerializeField]
     private bool cycle = false;
 
+    private void Awake()
+    {
+        PatrolPoints = new List<Transform> ();
+        if (PatrolPointsListParent != null)
+        {
+            ExtractListFromGameObject(PatrolPointsListParent, ref PatrolPoints);
+        }
+    }
     void Start()
     {
         targetPoint = 0;
+     
+        
     }
 
     void Update()
     {
+
         Vector3 direction = PatrolPoints[targetPoint].position - transform.position;
+        print(direction);
         if (direction != Vector3.zero)
         {
             Quaternion rotation = Quaternion.LookRotation(direction);
@@ -32,7 +47,7 @@ public class Patrol : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, PatrolPoints[targetPoint].position, speed * Time.deltaTime);
         if (transform.position == PatrolPoints[targetPoint].position)
         {
-            if (targetPoint == PatrolPoints.Length - 1)
+            if (targetPoint == PatrolPoints.Count - 1)
             {
                 if (cycle)
                 {
@@ -62,6 +77,17 @@ public class Patrol : MonoBehaviour
         {
             targetPoint -= 1;
         }
+    }
+
+    private void ExtractListFromGameObject(GameObject ParentGameObject, ref List<Transform> PointList)
+    {
+        Transform objectTransform = ParentGameObject.transform;
+        for (int i = 0; i < objectTransform.childCount; i++)
+        {
+        
+            PointList.Add(objectTransform.GetChild(i).transform);
+        }
+        
     }
 }
 
