@@ -33,7 +33,7 @@ public class MainCharacter : MonoBehaviour
     }
 
 
-    void Update()
+    private void FixedUpdate()
     {
         cameraTurn();
         Movement();   
