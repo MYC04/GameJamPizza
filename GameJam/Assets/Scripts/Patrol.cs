@@ -42,7 +42,7 @@ public class Patrol : MonoBehaviour
         if (direction != Vector3.zero)
         {
             Quaternion rotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(0,rotation.y,0,rotation.w), Time.deltaTime * turnSpeed);
         }
         transform.position = Vector3.MoveTowards(transform.position, PatrolPoints[targetPoint].position, speed * Time.deltaTime);
         if (transform.position == PatrolPoints[targetPoint].position)

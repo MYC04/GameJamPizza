@@ -149,19 +149,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03c34dd1dfc1ba348bd026e363eb8256, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.69
+      value: -2.6933773
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03c34dd1dfc1ba348bd026e363eb8256, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03c34dd1dfc1ba348bd026e363eb8256, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.405
+      value: 3.401023
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03c34dd1dfc1ba348bd026e363eb8256, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92387956
+      value: 0.9521371
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03c34dd1dfc1ba348bd026e363eb8256, type: 3}
       propertyPath: m_LocalRotation.x
@@ -169,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03c34dd1dfc1ba348bd026e363eb8256, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.38268343
+      value: 0.30567136
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03c34dd1dfc1ba348bd026e363eb8256, type: 3}
       propertyPath: m_LocalRotation.z
@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03c34dd1dfc1ba348bd026e363eb8256, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
+      value: 755.597
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03c34dd1dfc1ba348bd026e363eb8256, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -306,7 +306,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &100378081
 MonoBehaviour:
@@ -322,8 +322,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatrolPointsListParent: {fileID: 266393501}
   targetPoint: 0
-  speed: 0
-  turnSpeed: 0
+  speed: 5
+  turnSpeed: 10
   straight: 1
   cycle: 0
 --- !u!4 &100378082 stripped
@@ -1153,7 +1153,7 @@ Transform:
   m_GameObject: {fileID: 1355981256}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.12067719, z: 1.3}
+  m_LocalPosition: {x: 0, y: 0, z: 1.3}
   m_LocalScale: {x: 4.156447, y: 4.156447, z: 4.156447}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1246,7 +1246,7 @@ Transform:
   m_GameObject: {fileID: 1766197737}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0.06500012}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
