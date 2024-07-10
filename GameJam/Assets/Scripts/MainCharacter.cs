@@ -20,7 +20,10 @@ public class MainCharacter : MonoBehaviour
     float turnSmoothTime = 0.1f;
 
 
-
+    private void Awake()
+    {
+        InventoryManager.Manager.CreateInventory();
+    }
     void Start()
     {
         //Variable defines
@@ -36,9 +39,12 @@ public class MainCharacter : MonoBehaviour
     private void FixedUpdate()
     {
         cameraTurn();
-        Movement();   
+        
     }
-
+    private void Update()
+    {
+        Movement();
+    }
 
     private void cameraTurn()// if we want to turn camera for now , it is empty
     {
